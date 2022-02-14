@@ -24,12 +24,12 @@ L4 = Inductance_of_loop(IR_RLC);
 C4 = 1/(wo^2*L4);
 % Characteristics of Tx spiral
 Rp2 = parasitic_resistance(IR_TSC,7) * constant(7);
-Rp2 = 1.9;
+% Rp2 = 1.9;
 L2 = Inductance_of_spiral(IR_TSC);
 C2 = 1/(wo^2*L2);
 % Characteristics of Rx spiral
 Rp3 = parasitic_resistance(IR_RSC,7) * constant(3);
-Rp3 = 0.4;
+% Rp3 = 0.4;
 L3 = Inductance_of_spiral(IR_RSC);
 C3 = 1/(wo^2*L3);
 % Self Impedance
@@ -112,7 +112,7 @@ legend("Simulation","Measurement");
 set(gca,"FontWeight","bold","YLim",[0 150],"Xlim",[20 210]);
 
 figure
-plot(OD_array(2:end),diff(maxS21_array),'bo-');
+plot(OD_array,maxS21_array,'bo-');
 hold on
 plot(OD_array,10.^(maxAmongmax/20),'r');
 hold off
